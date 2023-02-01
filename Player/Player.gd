@@ -62,7 +62,9 @@ func move_state(delta):
 	move()
 	
 	if Input.is_action_just_pressed("roll"):
-		state = ROLL
+		if stats.mana >= 15:
+			stats.mana -= 15
+			state = ROLL
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
